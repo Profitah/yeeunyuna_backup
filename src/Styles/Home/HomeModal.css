@@ -1,0 +1,70 @@
+.modal-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .div1,
+  .div2,
+  .div3,
+  .div4,
+  .div5,
+  .div6,
+  .div7,
+  .div8,
+  .div9 {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .div1 {
+    background-color: #ffcccb; 
+  }
+  
+  .div2 {
+    background-color: #ffb6c1;
+  }
+  
+  .div3 {
+    background-color: #ff69b4;
+  }
+  
+  .div4 {
+    background-color: #dda0dd;
+  }
+  
+  .div5 {
+    background-color: #ba55d3;
+  }
+  
+  .div6 {
+    background-color: #9370db;
+  }
+  
+  .div7 {
+    background-color: #8a2be2;
+  }
+  
+  .div8 {
+    background-color: #9400d3;
+  }
+  
+  .div9 {
+    background-color: #800080;
+  }
+  
+  .close-modal-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+  }
+  
