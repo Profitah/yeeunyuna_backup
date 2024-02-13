@@ -1,0 +1,125 @@
+.HomeHeaderContent {
+    height: 18vh;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    /* y축 정렬 */
+}
+
+.home_textbox {
+    width: 50%;
+    padding-left: 5.5vw;
+}
+
+#hello_user {
+    font-size: 23px;
+    padding-bottom: 7px;
+}
+
+#fighting {
+    font-size: 15px;
+    line-height: 21px;
+    font-weight: 340;
+}
+
+.MoodWrap {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    /* x축 정렬 */
+}
+
+.Moodlets {
+    box-shadow: 0 0 13px rgb(0, 0, 0, 0.25);
+    width: 122px;
+    height: 118px;
+    border-radius: 16px;
+    cursor: pointer;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#RoutineZero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ED8C37;
+    font-weight: 340;
+}
+
+#Zero1 {
+    line-height: 28px;
+}
+
+.ToHomeAddPackage {
+    position: fixed;
+    bottom: 5vh;
+    right: 10vw;
+    font-size: 50px;
+    color: #ED8C37;
+    background-color: inherit;
+}
+
+@media all and (min-width:768px) and (max-width:3000px) {
+    .HomeHeaderContent {
+        height: 18vh;
+        display: flex;
+        width: 40vw;
+        margin-left: 30vw;
+        align-items: center;
+        /* y축 정렬 */
+    }
+    .home_textbox {
+        padding: 0;
+        margin-top: 1vh;
+    }
+    #hello_user {
+        font-size: 23px;
+        padding-bottom: 7px;
+    }
+    #fighting {
+        font-size: 15px;
+        line-height: 21px;
+        font-weight: 340;
+    }
+    .MoodWrap {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .Moodlets {
+        box-shadow: 0 0 13px rgb(0, 0, 0, 0.25);
+        width: 122px;
+        height: 118px;
+        border-radius: 16px;
+        cursor: pointer;
+    }
+    #RoutineZero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        position: absolute;
+        top: 53%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #ED8C37;
+        font-weight: 340;
+    }
+    #Zero1 {
+        line-height: 28px;
+    }
+    .ToHomeAddPackage {
+        position: fixed;
+        bottom: 5vh;
+        right: 10vw;
+        font-size: 50px;
+        color: #ED8C37;
+        background-color: inherit;
+    }
+}

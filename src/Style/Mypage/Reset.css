@@ -1,0 +1,25 @@
+.ResetWrap {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.Resetbtn {
+    color: #DC3412;
+    background-color: rgb(245, 245, 245);
+    padding: 15px;
+    border: none;
+    width: 50vw;
+    border-radius: 10px;
+    font: 1rem;
+    margin: 50px;
+    margin-bottom: 20px;
+    margin-top: 30vh;
+    font-size: large;
+}
+
+.Resettxt {
+    text-align: center;
+    font-size: 0.9rem;
+}

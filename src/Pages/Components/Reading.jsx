@@ -18,8 +18,8 @@ export const Reading = () => {
         잠들기 전 독서
       </div>
       <div className="m_txt2">
-        취침 30분 전 스마트폰을 자제하는 것은 깊은 잠을<br />
-        자는 데에 좋은 효과가 있어요
+        취침 30분 전 스마트폰을 자제하는 것은<br />
+        깊은 잠을 자는 데에 좋은 효과가 있어요.
       </div>
       <div className="selectbox"><div className="txtbox">마실 차 준비</div><button onClick={handleAddClick} className="selectbox_btn">추가</button></div>
       <div className="selectbox"><div className="txtbox">노트와 펜 준비</div><button onClick={handleAddClick} className="selectbox_btn">추가</button></div>

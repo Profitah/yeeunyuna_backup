@@ -18,7 +18,8 @@ export const Family = () => {
         가족과의 시간
       </div>
       <div className="m_txt2">
-        수정
+      가족과 함께 보내는 시간은 소중한 보물과도 같습니다. <br />
+      함께하는 모든 순간이 소중하고 값진 시간이 될 거예요.
       </div>
       <div className="selectbox"><div className="txtbox">가족들과 포옹하기</div><button onClick={handleAddClick} className="selectbox_btn">추가</button></div>
       <div className="selectbox"><div className="txtbox">오늘 하루 공유하기</div><button onClick={handleAddClick} className="selectbox_btn">추가</button></div>

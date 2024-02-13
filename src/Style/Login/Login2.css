@@ -1,0 +1,74 @@
+body {
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.login2_wrap {
+    height: 80vh;
+}
+
+.login2_textbox {
+    font-size: 2rem;
+    margin-top: 10vh;
+    margin-left: 7vw;
+    margin-bottom: 28vh;
+    line-height: 3rem;
+}
+
+.Gloginbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Gloginbox:hover {
+    cursor: pointer;
+}
+
+
+/* 스마트폰 세로: 0px ~ 480px */
+
+@media screen and (max-width: 480px) {
+    .login2_textbox {
+        font-size: 2rem;
+        margin-top: 10vh;
+        margin-left: 7vw;
+        margin-bottom: 28vh;
+    }
+}
+
+
+/* 스마트폰 가로, 태블릿 세로: 481px ~ 768px */
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .login2_textbox {
+        font-size: 2rem;
+        margin-top: 10vh;
+        margin-left: 15vw;
+        margin-bottom: 28vh;
+    }
+}
+
+
+/* 태블릿 가로, 노트북: 769px ~ 1279px */
+
+@media screen and (min-width: 769px) and (max-width: 1279px) {
+    .login2_textbox {
+        font-size: 2rem;
+        margin-top: 10vh;
+        margin-left: 30vw;
+        margin-bottom: 28vh;
+    }
+}
+
+
+/* 데스크탑: 1280px 이상 */
+
+@media screen and (min-width: 1280px) {
+    .login2_textbox {
+        font-size: 2rem;
+        margin-top: 10vh;
+        margin-left: 35vw;
+        margin-bottom: 28vh;
+    }
+}

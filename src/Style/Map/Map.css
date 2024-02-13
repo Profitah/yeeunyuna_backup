@@ -28,8 +28,12 @@
     font-size: 1rem;
 }
 
-.txt3 {
+.txt3Map {
     margin-bottom: 1vh;
+    font-size: 1.25rem;
+    color: #BFBABA;
+    margin-left: 6vw;
+    text-align: left;
 }
 
 .ul_map {

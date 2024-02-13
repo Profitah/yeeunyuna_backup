@@ -1,0 +1,84 @@
+body {
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.Login4_text {
+    text-align: center;
+    font-size: 2.2rem;
+    margin: 0 auto;
+    padding-top: 10vh;
+    width: 90vw;
+    font-weight: 400;
+    padding-bottom: 20vh;
+}
+
+strong {
+    font-weight: bolder;
+}
+
+.Login4_input {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.login4input {
+    border: none;
+    background-color: #F3F3F3;
+    border-radius: 50px;
+    width: 300px;
+    padding-left: 20px;
+    height: 7vh;
+    margin: 1vh;
+}
+
+.login4input:focus {
+    outline: none;
+}
+
+.login4select {
+    border: none;
+    background-color: #F3F3F3;
+    border-radius: 50px;
+    width: 320px;
+    margin: 1vh;
+    padding-left: 15px;
+    height: 7vh;
+    color: rgb(113, 113, 113);
+}
+
+.login4select:focus {
+    outline: none;
+}
+
+.login4button[type="submit"]:enabled {
+    padding: 2.3vh;
+    font-size: 1.25rem;
+    background-color: #ED8C37;
+    color: #ffffff;
+    border: #ED8C37;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-top: 10vh;
+    align-items: center;
+    width: 230px;
+}
+
+.login4button[type="submit"]:disabled {
+    padding: 2.3vh;
+    font-size: 1.25rem;
+    background-color: grey;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-top: 10vh;
+    align-items: center;
+    width: 230px;
+    color: white;
+}

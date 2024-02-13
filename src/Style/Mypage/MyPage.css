@@ -1,0 +1,19 @@
+.mypagetxt {
+    font-size: 2rem;
+    margin-top: 4vh;
+    margin-left: 10vw;
+    margin-bottom: 5vh;
+}
+
+.mypagenavi {
+    border-bottom: 0.5px solid #BFBABA;
+    margin-top: 2vh;
+    margin-left: 10vw;
+    width: 75%;
+    padding: 12px;
+    display: flex;
+}
+
+.mypagetxtnavi {
+    width: 95%;
+}

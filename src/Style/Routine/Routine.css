@@ -1,0 +1,587 @@
+/* 노트북 & 테블릿 가로 (해상도 1024px ~ 1279px)*/
+
+@media all and (min-width:1024px) {
+    body {
+        margin: 0 auto;
+        overflow: visible;
+        font-family: "GowunDodum";
+    }
+    .txt1 {
+        font-size: 1.56rem;
+        margin-left: 6vw;
+        margin-top: 4vh;
+        text-align: left;
+        font-weight: bold;
+        padding-bottom: 4vh;
+    }
+    .txt2 {
+        font-size: 0.8rem;
+        margin-left: 6vw;
+        text-align: left;
+        padding-bottom: 60px;
+    }
+    .txt3 {
+        font-size: 1.25rem;
+        color: #BFBABA;
+        margin-left: 25vw;
+        text-align: left;
+    }
+    .gotoroutine {
+        display: flex;
+        flex-direction: column;
+    }
+    .Routinebtn {
+        display: flex;
+        justify-content: space-between;
+        color: black;
+        margin-bottom: 3vh;
+        margin-top: 3vh;
+    }
+    .active {
+        background-color: #ED8C37;
+        border: 0.2px solid black;
+        border-radius: 50px;
+        height: 4.5vh;
+        color: white;
+        width: 7vw;
+    }
+    .inactive {
+        border: 0.2px solid rgb(131, 131, 131);
+        border-radius: 50px;
+        background-color: white;
+        height: 4.5vh;
+        color: black;
+        width: 7vw;
+    }
+    .inactive:hover {
+        cursor: pointer;
+    }
+    .active:hover {
+        cursor: pointer;
+    }
+    .go {
+        border: 0.2px solid rgb(131, 131, 131);
+        border-radius: 20px;
+        height: 10vh;
+        font-size: 1.4rem;
+        margin-bottom: 4vh;
+        margin-top: 1.5vh;
+        font-weight: 100;
+        color: black;
+        background-color: white;
+        text-align: left;
+        padding-left: 5vh;
+    }
+    .main_box {
+        border: 0.2px solid rgb(131, 131, 131);
+        border-radius: 20px;
+        height: auto;
+        text-align: left;
+        margin-bottom: 3vh;
+        padding-top: 3.5vh;
+        display: inline-block;
+        width: 48vw;
+        padding-left: 2vw;
+    }
+    .m_txt1 {
+        font-size: 1.5rem;
+    }
+    .m_txt2 {
+        font-size: 0.8rem;
+        color: #5B5B5B;
+        padding-bottom: 4vh;
+        padding-top: 3px;
+    }
+    .selectbox {
+        border-radius: 13px;
+        background-color: #F7F7F7;
+        height: 7vh;
+        margin-bottom: 2vh;
+        width: 45vw;
+        display: flex;
+    }
+    .txtbox {
+        font-size: 20px;
+        height: 3.8vh;
+        margin-top: 2vh;
+        margin-left: 20px;
+        width: 38vw;
+    }
+    .selectbox_btn {
+        color: #595656;
+        background-color: #D9D9D9;
+        border: none;
+        height: 3.8vh;
+        border-radius: 20px;
+        margin-top: 1.6vh;
+        width: 50px;
+    }
+    .select_all {
+        border: none;
+        background-color: white;
+        color: rgb(167, 167, 167);
+        margin-top: 8vh;
+        margin-bottom: 2vh;
+        height: 5vh;
+        font-size: 1.2rem;
+        text-align: center;
+        width: 14vw;
+        margin-left: 16vw;
+    }
+    .selectbox_btn:hover {
+        cursor: pointer;
+        background-color: #ED8C37;
+        color: white;
+    }
+    .RoutineContainer {
+        width: 50vw;
+        margin-left: 25vw;
+    }
+}
+
+
+/* 테블릿 가로 (해상도 768px ~ 1023px)*/
+
+@media all and (min-width:768px) and (max-width:1023px) {
+    body {
+        margin: 0 auto;
+        overflow: visible;
+        font-family: "GowunDodum";
+    }
+    .Routine_wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .txt1 {
+        font-size: 1.56rem;
+        margin-left: 6vw;
+        margin-top: 4vh;
+        text-align: left;
+        font-weight: bold;
+        padding-bottom: 4vh;
+    }
+    .txt2 {
+        font-size: 0.8rem;
+        margin-left: 6vw;
+        text-align: left;
+        padding-bottom: 60px;
+    }
+    .txt3 {
+        font-size: 1.25rem;
+        color: #BFBABA;
+        margin-left: 6vw;
+        text-align: left;
+    }
+    .gotoroutine {
+        margin-left: 6vw;
+    }
+    .Routinebtn {
+        display: flex;
+        justify-content: space-between;
+        margin: 3vh 6vw;
+        color: black;
+    }
+    .inactive {
+        border: 0.2px solid rgb(131, 131, 131);
+        border-radius: 50px;
+        background-color: white;
+        width: 18vw;
+        height: 4.5vh;
+        color: black;
+    }
+    .inactive:hover {
+        cursor: pointer;
+    }
+    .active:hover {
+        cursor: pointer;
+    }
+    .active {
+        background-color: #ED8C37;
+        border: 0.2px solid black;
+        border-radius: 50px;
+        width: 18vw;
+        height: 4.5vh;
+        color: white;
+    }
+    .go {
+        border: 0.2px solid rgb(131, 131, 131);
+        border-radius: 20px;
+        width: 85vw;
+        height: 10vh;
+        font-size: 1.4rem;
+        text-align: left;
+        align-items: center;
+        display: flex;
+        padding-left: 5vw;
+        margin-bottom: 4vh;
+        margin-top: 4vh;
+        font-weight: 100;
+        color: black;
+        background-color: white;
+    }
+    .main_box {
+        border: 0.2px solid rgb(131, 131, 131);
+        border-radius: 20px;
+        width: 85vw;
+        height: auto;
+        text-align: left;
+        align-items: center;
+        padding-left: 5vw;
+        margin-bottom: 4vh;
+        padding-top: 3vh;
+        display: inline-block;
+    }
+    .m_txt1 {
+        font-size: 1.5rem;
+    }
+    .m_txt2 {
+        font-size: 0.8rem;
+        color: #5B5B5B;
+        padding-bottom: 4vh;
+        padding-top: 2px;
+    }
+    .selectbox {
+        border-radius: 13px;
+        background-color: #F7F7F7;
+        height: 7vh;
+        width: 80vw;
+        margin-bottom: 2vh;
+        display: flex;
+    }
+    .txtbox {
+        font-size: 20px;
+        width: 90%;
+        height: 3.8vh;
+        margin-left: 20px;
+        margin-top: 2.2vh;
+    }
+    .selectbox_btn {
+        color: #595656;
+        background-color: #D9D9D9;
+        border: none;
+        height: 3.8vh;
+        width: 50px;
+        border-radius: 20px;
+        margin-top: 1.6vh;
+        margin-right: 2vw;
+    }
+    .select_all {
+        border: none;
+        background-color: white;
+        color: rgb(167, 167, 167);
+        margin-top: 8vh;
+        margin-bottom: 2vh;
+        width: 20vh;
+        height: 5vh;
+        font-size: 1.2rem;
+        text-align: center;
+        position: relative;
+        left: 47%;
+        transform: translateX(-50%);
+    }
+    .selectbox_btn:hover {
+        cursor: pointer;
+        background-color: #ED8C37;
+        color: white;
+    }
+}
+
+
+/* 모바일 가로 & 테블릿 세로 (해상도 480px ~ 767px)*/
+
+@media all and (min-width:480px) and (max-width:767px) {
+    body {
+        margin: 0 auto;
+        overflow: visible;
+        font-family: "GowunDodum";
+    }
+    .Routine_wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .txt1 {
+        font-size: 1.56rem;
+        margin-left: 6vw;
+        margin-top: 4vh;
+        text-align: left;
+        font-weight: bold;
+        padding-bottom: 4vh;
+    }
+    .txt2 {
+        font-size: 0.8rem;
+        margin-left: 6vw;
+        text-align: left;
+        padding-bottom: 60px;
+    }
+    .txt3 {
+        font-size: 1.25rem;
+        color: #BFBABA;
+        margin-left: 6vw;
+        text-align: left;
+    }
+    .gotoroutine {
+        margin-left: 6vw;
+    }
+    .Routinebtn {
+        display: flex;
+        justify-content: space-between;
+        margin: 3vh 6vw;
+        color: black;
+    }
+    .inactive {
+        border: 0.2px solid rgb(131, 131, 131);
+        border-radius: 50px;
+        background-color: white;
+        width: 18vw;
+        height: 4.5vh;
+        color: black;
+    }
+    .inactive:hover {
+        cursor: pointer;
+    }
+    .active:hover {
+        cursor: pointer;
+    }
+    .active {
+        background-color: #ED8C37;
+        border: 0.2px solid black;
+        border-radius: 50px;
+        width: 18vw;
+        height: 4.5vh;
+        color: white;
+    }
+    .go {
+        border: 0.2px solid rgb(131, 131, 131);
+        border-radius: 20px;
+        width: 85vw;
+        height: 10vh;
+        font-size: 1.4rem;
+        text-align: left;
+        align-items: center;
+        display: flex;
+        padding-left: 5vw;
+        margin-bottom: 4vh;
+        margin-top: 4vh;
+        font-weight: 100;
+        color: black;
+        background-color: white;
+    }
+    .main_box {
+        border: 0.2px solid rgb(131, 131, 131);
+        border-radius: 20px;
+        width: 85vw;
+        height: auto;
+        text-align: left;
+        align-items: center;
+        padding-left: 5vw;
+        margin-bottom: 4vh;
+        padding-top: 3vh;
+        display: inline-block;
+    }
+    .m_txt1 {
+        font-size: 1.5rem;
+    }
+    .m_txt2 {
+        font-size: 0.8rem;
+        color: #5B5B5B;
+        padding-bottom: 4vh;
+        padding-top: 2px;
+    }
+    .selectbox {
+        border-radius: 13px;
+        background-color: #F7F7F7;
+        height: 7vh;
+        width: 80vw;
+        margin-bottom: 2vh;
+        display: flex;
+    }
+    .txtbox {
+        font-size: 20px;
+        width: 90%;
+        height: 3.8vh;
+        margin-left: 20px;
+        margin-top: 2.2vh;
+    }
+    .selectbox_btn {
+        color: #595656;
+        background-color: #D9D9D9;
+        border: none;
+        height: 3.8vh;
+        width: 50px;
+        border-radius: 20px;
+        margin-top: 1.6vh;
+        margin-right: 2vw;
+    }
+    .select_all {
+        border: none;
+        background-color: white;
+        color: rgb(167, 167, 167);
+        margin-top: 8vh;
+        margin-bottom: 2vh;
+        width: 20vh;
+        height: 5vh;
+        font-size: 1.2rem;
+        text-align: center;
+        position: relative;
+        left: 47%;
+        transform: translateX(-50%);
+    }
+    .selectbox_btn:hover {
+        cursor: pointer;
+        background-color: #ED8C37;
+        color: white;
+    }
+}
+
+
+/* 모바일 세로 (해상도 ~ 479px)*/
+
+@media all and (max-width:479px) {
+    body {
+        overflow: visible;
+        font-family: "GowunDodum";
+    }
+    .Routine_wrap {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .txt1 {
+        font-size: 1.56rem;
+        margin-left: 6vw;
+        margin-top: 4vh;
+        text-align: left;
+        font-weight: bold;
+        padding-bottom: 4vh;
+    }
+    .txt2 {
+        font-size: 0.8rem;
+        margin-left: 6vw;
+        text-align: left;
+        padding-bottom: 60px;
+    }
+    .txt3 {
+        font-size: 1.25rem;
+        color: #BFBABA;
+        margin-left: 6vw;
+        text-align: left;
+    }
+    .gotoroutine {
+        margin-left: 6vw;
+    }
+    .Routinebtn {
+        display: flex;
+        justify-content: space-between;
+        margin: 3vh 6vw;
+        color: black;
+    }
+    .inactive {
+        border: 0.2px solid rgb(131, 131, 131);
+        border-radius: 50px;
+        background-color: white;
+        width: 18vw;
+        height: 4.5vh;
+        color: black;
+    }
+    .inactive:hover {
+        cursor: pointer;
+    }
+    .active:hover {
+        cursor: pointer;
+    }
+    .active {
+        background-color: #ED8C37;
+        border: 0.2px solid black;
+        border-radius: 50px;
+        width: 18vw;
+        height: 4.5vh;
+        color: white;
+    }
+    .go {
+        border: 0.2px solid rgb(131, 131, 131);
+        border-radius: 20px;
+        width: 85vw;
+        height: 10vh;
+        font-size: 1.4rem;
+        text-align: left;
+        align-items: center;
+        display: flex;
+        padding-left: 5vw;
+        margin-bottom: 4vh;
+        margin-top: 4vh;
+        font-weight: 100;
+        color: black;
+        background-color: white;
+    }
+    .main_box {
+        border: 0.2px solid rgb(131, 131, 131);
+        border-radius: 20px;
+        width: 85vw;
+        height: auto;
+        text-align: left;
+        align-items: center;
+        padding-left: 5vw;
+        margin-bottom: 4vh;
+        padding-top: 3vh;
+        display: inline-block;
+    }
+    .m_txt1 {
+        font-size: 1.5rem;
+    }
+    .m_txt2 {
+        font-size: 0.8rem;
+        color: #5B5B5B;
+        padding-bottom: 4vh;
+        padding-top: 2px;
+    }
+    .selectbox {
+        border-radius: 13px;
+        background-color: #F7F7F7;
+        height: 7vh;
+        width: 80vw;
+        margin-bottom: 2vh;
+        display: flex;
+    }
+    .txtbox {
+        font-size: 20px;
+        width: 90%;
+        height: 3.8vh;
+        margin-left: 20px;
+        margin-top: 2.2vh;
+    }
+    .selectbox_btn {
+        color: #595656;
+        background-color: #D9D9D9;
+        border: none;
+        height: 3.8vh;
+        width: 50px;
+        border-radius: 20px;
+        margin-top: 1.6vh;
+        margin-right: 2vw;
+    }
+    .select_all {
+        border: none;
+        background-color: white;
+        color: rgb(167, 167, 167);
+        margin-top: 8vh;
+        margin-bottom: 2vh;
+        width: 20vh;
+        height: 5vh;
+        font-size: 1.2rem;
+        text-align: center;
+        position: relative;
+        left: 47%;
+        transform: translateX(-50%);
+    }
+    .selectbox_btn:hover {
+        cursor: pointer;
+        background-color: #ED8C37;
+        color: white;
+    }
+}

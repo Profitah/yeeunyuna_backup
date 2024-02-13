@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-//import { GoogleMap, LoadScript, Marker, InfoWindow, StandaloneSearchBox } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, MarkerF, InfoWindowF, StandaloneSearchBox } from '@react-google-maps/api';
 import dot from './제목_없는_아트워크.png';
 import NavBar from "../Nav/Nav.jsx";
-import '../../Styles/Map/Map.css'
+import '../../Style/Map/Map.css'
 import { FaPhoneAlt } from "react-icons/fa";
-//import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button, Collapse, List, ListItem } from '@material-ui/core';
+import {  Button, Collapse, List, ListItem } from '@material-ui/core';
 
 const containerStyle = {
   width: '90vw',
@@ -100,7 +100,7 @@ const MyComponent = () => {
         <div className='txt1'>내 마음을 두드리는 공간</div>
         <div className='txt2'>도움을 청해봐요</div>
         {/* 문구 수정 */}
-        <div className='txt3'>#주변 전문의를 찾아봐요</div>
+        <div className='txt3Map'>#주변 전문의를 찾아봐요</div>
       </div>
       <LoadScript
         googleMapsApiKey={import.meta.env.VITE_REACT_APP_GOOGLE_MAPS_API_KEY}
@@ -114,7 +114,7 @@ const MyComponent = () => {
           onLoad={ref => setMap(ref)}
         >
           {initialLocation && (
-            <Marker
+            <MarkerF
               position={initialLocation}
               icon={{ 
                 url: dot,
@@ -123,7 +123,7 @@ const MyComponent = () => {
             />
           )}
           {places.slice(0, 5).map((place, i) => (
-            <Marker
+            <MarkerF
               key={i}
               position={place.geometry.location}
               onClick={() => {
@@ -132,7 +132,7 @@ const MyComponent = () => {
             />
           ))}
           {selectedPlace && (
-            <InfoWindow
+            <InfoWindowF
               position={{ lat: selectedPlace.geometry.location.lat(), lng: selectedPlace.geometry.location.lng() }}
               onCloseClick={() => {
                 setSelectedPlace(null);
@@ -142,7 +142,7 @@ const MyComponent = () => {
                 <h2>{selectedPlace.name}</h2>
                 <p>{selectedPlace.formatted_address}</p>
               </div>
-            </InfoWindow>
+            </InfoWindowF>
           )}
           <StandaloneSearchBox
             onLoad={onLoad}
@@ -150,11 +150,11 @@ const MyComponent = () => {
           >
             <input
               type="text"
-              placeholder="추천 키워드: 정신, 심리, 상담"
+              placeholder="추천 키워드: 정신, 심리, 상담, 건강 증진 센터"
               style={{
                 boxSizing: `border-box`,
                 border: `1px solid transparent`,
-                width: `240px`,
+                width: `280px`,
                 height: `32px`,
                 marginTop: `27px`,
                 padding: `0 12px`,
@@ -165,7 +165,7 @@ const MyComponent = () => {
                 textOverflow: `ellipses`,
                 position: "absolute",
                 left: "50%",
-                marginLeft: "-120px"
+                marginLeft: "-140px"
               }}
               onChange={e => setSearchTerm(e.target.value)}
             />

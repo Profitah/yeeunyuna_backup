@@ -1,0 +1,125 @@
+.Nav {
+    background-color: white;
+    border-bottom: 0.5px solid black;
+    align-items: center;
+    text-align: right;
+    margin-bottom: 0 auto;
+    font-size: 208%;
+    height: 30%;
+    position: relative;
+}
+
+.Logo_nav {
+    vertical-align: left;
+    margin-left: 2vw;
+    margin-right: 60vw;
+    margin-bottom: 1vh;
+    width: 15vw;
+    height: auto;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.nav-menu {
+    position: absolute;
+    /* nav-menu에 position: absolute;를 추가합니다. */
+    top: 100%;
+    /* nav-menu가 nav-bar 바로 아래에 위치하도록 top 값을 설정합니다. */
+    width: 100%;
+    /* nav-menu의 너비를 nav-bar의 너비와 동일하게 설정합니다. */
+    z-index: 1;
+    /* nav-menu가 다른 요소들 위에 나타나도록 z-index를 설정합니다. */
+    animation: slideDown 1s ease-out forwards;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #ED8C37;
+}
+
+.nav-menu li {
+    text-align: left;
+    cursor: pointer;
+    font-size: 1.3rem;
+    line-height: 2.2em;
+    transition: font-size 0.4s ease;
+    padding-left: 5.5vw;
+}
+
+.nav-menu li:hover {
+    background-color: #efad43;
+    font-size: 1.7rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.MypageIcon,
+.NavIcon {
+    cursor: pointer;
+    padding-top: 3vh;
+    padding-bottom: 1.5vh;
+    margin-right: 2vw;
+}
+
+.NavIcon {
+    margin-left: 3vw;
+}
+
+.Nav.nav-border {
+    border-bottom: none;
+    /* 메뉴가 보일 때 border-bottom 제거 */
+}
+
+
+/* @media only screen and (max-width: 480px) {
+    body {
+        background-color: lightblue;
+    }
+} */
+
+@media only screen and (min-width: 481px) {
+    .Logo_nav {
+        vertical-align: left;
+        margin-left: 2vw;
+        margin-right: 65vw;
+        margin-bottom: 1vh;
+        width: 15vw;
+        height: auto;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .Logo_nav {
+        vertical-align: left;
+        margin-left: 2vw;
+        margin-right: 70vw;
+        margin-bottom: 1vh;
+        width: 8vw;
+        height: auto;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .Logo_nav {
+        vertical-align: left;
+        margin-left: 2vw;
+        margin-right: 79vw;
+        margin-bottom: 1vh;
+        width: 5vw;
+        height: auto;
+    }
+}

@@ -1,0 +1,82 @@
+/* login 1 */
+
+body {
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.Login1container {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.login1maintxt {
+    text-align: left;
+    margin-top: 6vh;
+    margin-left: 35vw;
+    margin-bottom: 0.2vh;
+}
+
+.Login1txt1 {
+    font-size: 2.5rem;
+    width: 30vw;
+    font-weight: 730;
+    margin-bottom: 0.3vh;
+    letter-spacing: 1px;
+    margin-top: 2.5vh;
+    line-height: 3.4rem;
+    white-space: pre-line;
+}
+
+.Login1txt2 {
+    position: relative;
+    bottom: 6vh;
+    font-size: 0.8rem;
+    width: 70vw;
+    margin-top: 6vh;
+    line-height: 2.2vh;
+    letter-spacing: 0.05px;
+}
+
+#login1_submit_btn {
+    padding: 2.3vh;
+    font-size: 1.25rem;
+    background-color: #ed8c37;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-bottom: 10vh;
+    width: 430px;
+    align-items: center;
+    margin: 10vh auto;
+    color: white;
+    border: none;
+}
+
+#login1_submit_btn:hover {
+    background-color: #ed8c37;
+    color: white;
+}
+
+
+/* 스마트폰 세로: 0px ~ 480px */
+
+@media screen and (max-width: 873px) {
+    .login1maintxt {
+        margin-top: 6vh;
+        margin-left: 10vw;
+        margin-bottom: 0.2vh;
+    }
+    .Login1txt1 {
+        width: 70vw;
+    }
+    .Login1txt2 {
+        width: 70vw;
+    }
+    #login1_submit_btn {
+        width: 300px;
+    }
+}

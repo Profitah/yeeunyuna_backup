@@ -18,5 +18,9 @@ export default {
   },
   scripts: {
     "clean-release": "clean"
+  },
+  define: {
+    'process.env': {},
+    global: {},
   }
 };

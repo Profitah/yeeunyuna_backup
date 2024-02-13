@@ -18,7 +18,7 @@ export const MiracleMorning = () => {
         미라클 모닝
       </div>
       <div className="m_txt2">
-          스스로 정한 시간에 일어나서 하루를 시작해보면 어떨까요?<br />당신 인생의 터닝포인트가 될 거예요
+          스스로 정한 시간에 일어나서 하루를 시작해보면 어떨까요?<br />당신 인생의 터닝포인트가 될 거예요.
       </div>
       <div className="selectbox"><div className="txtbox">잠자리 정리</div><button onClick={handleAddClick} className="selectbox_btn">추가</button></div>
       <div className="selectbox"><div className="txtbox">명상</div><button onClick={handleAddClick} className="selectbox_btn">추가</button></div>

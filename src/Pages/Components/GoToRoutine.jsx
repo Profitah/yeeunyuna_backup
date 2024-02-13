@@ -26,7 +26,7 @@ export const GoToRoutine = ({ activeBtn, handleMiracleMorningClick, handleDaySta
       )}
       {activeBtn === 'mood' && (
         <>
-          <button className="go" onClick={handlePmsClick}>자기 관리(PMS)</button>
+          <button className="go" onClick={handlePmsClick}>자기 관리 (PMS)</button>
           <button className="go" onClick={handleDepression1Click}>우울증 완화</button>
           <button className="go" onClick={handleFrustrationClick}>좌절감이 들 때</button>
           <button className="go" onClick={handleRestClick}>일과 후 휴식</button>

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "../../Styles/Login/Login.css";
-
+import "../../Style/Login/Login3.css";
 
 const Login3 = () => {
   const [selectedOptions, setSelectedOptions] = useState([]);
@@ -18,47 +17,40 @@ const Login3 = () => {
   };
 
   const handleButtonClick = async () => {
+    const keywords = {};
+    selectedOptions.forEach((option, index) => {
+      keywords[`keyword${index + 1}`] = option;
+    });
+
     try {
-      const token = localStorage.getItem('authToken');
+      const token = localStorage.getItem("authToken");
 
       if (!token) {
-        console.error("인증 토큰이 없습니다.");
         return;
       }
 
-      const apiUrl = "/api/v1/user/keywords";
+      const apiUrl = 'https://dofarming.duckdns.org/api/v1/user/keywords';
 
-      const keywords = {};
-      selectedOptions.forEach((option, index) => {
-        keywords[`keyword${index + 1}`] = option;
-      });
-
-      const data = {
-        keywords: keywords,
-      };
-
-      const response = await axios.patch(apiUrl, data, {
+      await axios.patch(apiUrl, keywords, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
       });
-
-      console.log("성공", response.data);
     } catch (error) {
-      console.error("서버 요청 실패:", error);
+      return;
     }
   };
 
   const options = [
-    "학업",
-    "취업",
-    "직장생활",
-    "인간관계",
-    "사랑",
-    "스트레스",
-    "미래에 대한 불안감",
-    "건강",
+    '학업',
+    '취업',
+    '직장생활',
+    '인간관계',
+    '사랑',
+    '스트레스',
+    '미래에 대한 불안감',
+    '건강',
   ];
 
   return (
@@ -70,13 +62,14 @@ const Login3 = () => {
         {options.map((option) => (
           <div
             key={option}
-            className={`option ${selectedOptions.includes(option) ? "selected" : ""}`}
+            className={`option ${selectedOptions.includes(option) ? 'selected' : ''}`}
             onClick={() => toggleOption(option)}
           >
             {option}
           </div>
         ))}
       </div>
+
       <Link to="/Login4">
         <button
           id="SelectclearBtn"

@@ -18,7 +18,7 @@ export const Depression = () => {
         우울증 완화
       </div>
       <div className="m_txt2">
-        작은 변화는 큰 변화로 이어질 거예요
+        작은 변화는 큰 변화로 이어질 거예요.
       </div>
       <div className="selectbox"><div className="txtbox">내 감정을 그대로 응시하기</div><button onClick={handleAddClick} className="selectbox_btn">추가</button></div>
       <div className="selectbox"><div className="txtbox">오늘의 기분 쓰기</div><button onClick={handleAddClick} className="selectbox_btn">추가</button></div>

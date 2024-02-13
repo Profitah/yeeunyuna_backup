@@ -1,127 +1,47 @@
-import React, { useState } from "react";
-import MakePackage from "./MakePackage";
-import "../../Styles/Home/Home.css";
-import "../../Styles/Home/MakeRoutine.css";
-import "../../Styles/Home/HomeModal.css";
-import NavBar from "../Nav/Nav.jsx";
+// (POST) dofarming.duckdns.org/api/v1/track (기분변경)
+//PATCH dofarming.duckdns/api/v1/user/mood HTTP/1.1 (기분저장)
+// GET /api/v1/user HTTP/1.1 (사용자 정보조회 )
+
+import React, { useState, useEffect } from "react";
+import HomeSection2 from "./HomeComponents/HomeSection2.jsx";
+import HomeSection1 from "./HomeComponents/HomeSection1.jsx";
+import NavBar from "../Nav/Nav";
+import HomeHeader from "./HomeComponents/HomeHeader.jsx";
 
 const Home = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [packages, setPackages] = useState([]);
-  const [selectedDiv, setSelectedDiv] = useState("");
+  const [routineData, setRoutineData] = useState(null);
 
-  const handleAddPackage = (newPackage) => {
-    setPackages([...packages, newPackage]);
+  useEffect(() => {
+    // 서버에서 루틴값을 받아오는 비동기 함수 호출
+    fetchRoutineData()
+      .then((data) => {
+        setRoutineData(data);
+      })
+      .catch((error) => {
+        console.error("루틴 데이터를 가져오는 중 오류가 발생했습니다:", error);
+      });
+  }, []);
+
+  const fetchRoutineData = async () => {
+    // 서버에서 루틴 데이터를 가져오는 비동기 함수 호출
+    const response = await fetch("루틴 데이터를 가져오는 API 엔드포인트 URL");
+    const data = await response.json();
+    return data;
   };
 
-  const handleDeletePackage = (index) => {
-    const updatedPackages = [...packages];
-    updatedPackages.splice(index, 1);
-    setPackages(updatedPackages);
-  };
+  //토큰 가져오기
+  const token = localStorage.getItem('authToken');
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
-  const handleDivClick = (divNumber) => {
-    setSelectedDiv(divNumber);
-
-    const selectedDivImage = getComputedStyle(
-      document.querySelector(`.${divNumber}`)
-    ).backgroundImage;
-    document.querySelector(".Moodlets").style.backgroundImage =
-      selectedDivImage;
-  };
 
   return (
-    <div className="HomeWrap">
-      <NavBar />
-      <div className="Content1">
-        <div className="home_textbox">
-          <p>님 반가워요</p>
-          <p>오늘도 활기차게 하루를 시작해봐요!</p>
-        </div>
-        <div
-          className="Moodlets"
-          style={{ backgroundImage: `url("${selectedDiv}")` }}
-          onClick={openModal}
-        ></div>
+    <div>
+      <div className="HomeWrap">
+        <NavBar />
+        <HomeHeader/>
+        <HomeSection1 />
+        <HomeSection2 />
       </div>
-
-      {isModalOpen && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <div
-              className="div1"
-              onClick={() => handleDivClick("div1")}
-              style={{ backgroundImage: 'url("/emotion1.png")' }}
-            ></div>
-            <div
-              className="div2"
-              onClick={() => handleDivClick("div2")}
-              style={{ backgroundImage: 'url("/emotion2.png")' }}
-            ></div>
-            <div
-              className="div3"
-              onClick={() => handleDivClick("div3")}
-              style={{ backgroundImage: 'url("/emotion3.png")' }}
-            ></div>
-            <div
-              className="div4"
-              onClick={() => handleDivClick("div4")}
-              style={{ backgroundImage: 'url("/emotion4.png")' }}
-            ></div>
-            <div
-              className="div5"
-              onClick={() => handleDivClick("div5")}
-              style={{ backgroundImage: 'url("/emotion5.png")' }}
-            ></div>
-            <div
-              className="div6"
-              onClick={() => handleDivClick("div6")}
-              style={{ backgroundImage: 'url("/emotion6.png")' }}
-            ></div>
-            <div
-              className="div7"
-              onClick={() => handleDivClick("div7")}
-              style={{ backgroundImage: 'url("/emotion7.png")' }}
-            ></div>
-            <div
-              className="div8"
-              onClick={() => handleDivClick("div8")}
-              style={{ backgroundImage: 'url("/emotion8.png")' }}
-            ></div>
-            <div
-              className="div9"
-              onClick={() => handleDivClick("div9")}
-              style={{ backgroundImage: 'url("/emotion9.png")' }}
-            ></div>
-
-            <p className="close-modal-button" onClick={closeModal}>
-              x
-            </p>
-          </div>
-        </div>
-      )}
-
-      <MakePackage handleAddPackage={handleAddPackage} />
-
-      {packages.length > 0 ? (
-        packages.map((pkg, index) => (
-          <div key={index}>
-            <strong>패키지 이름 </strong> {pkg.name}
-            <br />
-            <strong>패키지 상태 </strong> {pkg.status}
-            <button onClick={() => handleDeletePackage(index)}>삭제</button> 
-            <hr />
-          </div>
-        ))
-      ) : null}
     </div>
   );
 };

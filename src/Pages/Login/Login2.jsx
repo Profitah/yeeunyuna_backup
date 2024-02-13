@@ -1,7 +1,8 @@
-import "../../Styles/Login/Login.css";
+import "../../Style/Login/Login2.css";
 import { GoogleLoginButton } from "react-social-login-buttons";
 import { GoogleAuthProvider, signInWithPopup, getIdToken } from "firebase/auth";
 import { auth } from "../../Firebase/firebase-config";
+import { instance } from "../../libs/api";
 import { useNavigate } from "react-router-dom"; 
 import axios from "axios";
 import React, { useState, useEffect } from "react";
@@ -21,26 +22,25 @@ const Login2 = () => {
       const token = localStorage.getItem('authToken');
       if (token) {
         // 서버에 토큰을 전달하여 사용자 인증 및 관련 정보 요청
-        const apiUrl = "https://dofarming.duckdns.org";
         try {
-          const response = await axios.get(apiUrl, {
+          const response = await instance.get("/", {
             headers: {
               Authorization: `Bearer ${token}`
             }
           });
           // 사용자가 이미 회원가입되어 있는 경우 메인 페이지로 이동
           if (response.data.isRegistered) {
-            navigate('/Main'); // 메인 페이지로 이동
+            navigate('/home'); // 메인 페이지로 이동
           }
         } catch (error) {
           console.error(error);
         }
       }
     };
-
+  
     checkLoginStatus(); // 로그인 상태 확인 함수 호출
   }, [navigate]);
-
+  
   // 구글 로그인 버튼 클릭 시 실행되는 함수
   async function handleGoogleLogin() {
     // GoogleAuthProvider를 사용하여 구글 로그인 팝업 실행
@@ -57,7 +57,7 @@ const Login2 = () => {
       localStorage.setItem('authToken', token);
 
       // 서버에 토큰을 전달하여 사용자 인증 및 관련 정보 요청
-      const apiUrl = "https://dofarming.duckdns.org";
+      const apiUrl = instance.defaults.baseURL + "/api/v1/user";  
       const response = await axios.get(apiUrl, {
         headers: {
           Authorization: `Bearer ${token}`
@@ -66,7 +66,7 @@ const Login2 = () => {
 
       // 사용자가 이미 회원가입되어 있는 경우 메인 페이지로 이동
       if (response.data.isRegistered) {
-        navigate('/Main'); // 메인 페이지로 이동
+        navigate('/home'); // 메인 페이지로 이동
       } else {
         navigate('/Login3'); // 로그인 페이지로 이동
       }
@@ -82,13 +82,22 @@ const Login2 = () => {
       <div className="login2_wrap">
         <div className="login2_textbox">
           <p>
-            <span className="bold_text">몸</span>과{" "}
-            <span className="bold_text">마음</span>
+            <strong>몸</strong>과 <strong>마음</strong><br />
+            건강하게 챙기는 첫 단계!
           </p>
-          <p>건강하게 챙기는 첫 단계!</p>
+          
         </div>
         <div className="Gloginbox">
-          <GoogleLoginButton onClick={handleGoogleLogin} />
+          <GoogleLoginButton
+          style={{
+            backgroundColor: "white", // 배경색 변경
+            color: "black", // 글자색 변경
+            fontSize: "1rem", // 글자 크기 변경
+            borderRadius: "5px", // 테두리 둥글게
+            textAlign: "center",
+            width: "300px",
+          }}
+          onClick={handleGoogleLogin}/>
         </div>
       </div>
     </div>

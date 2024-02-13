@@ -18,8 +18,8 @@ export const Myself = () => {
         나를 가꾸는 시간
       </div>
       <div className="m_txt2">
-        나를 돌보는 시간이 있나요? 다른 것이 아닌 자신을<br />
-        중심으로 루틴을 만들어 보는 건 어때요?
+        나를 돌보는 시간이 있나요? <br />
+        다른 것이 아닌 나를 중심으로 루틴을 만들어 보는 건 어때요?
       </div>
       <div className="selectbox"><div className="txtbox">좋아하는 음악 듣기</div><button onClick={handleAddClick} className="selectbox_btn">추가</button></div>
       <div className="selectbox"><div className="txtbox">샤워하기</div><button onClick={handleAddClick} className="selectbox_btn">추가</button></div>

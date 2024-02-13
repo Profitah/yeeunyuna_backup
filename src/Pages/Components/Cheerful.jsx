@@ -18,9 +18,8 @@ export const Cheerful = () => {
         활기찬 아침
       </div>
       <div className="m_txt2">
-        어두운 밤에서 새벽을 지나 아침이라는 밝은 빛이<br />
-        당신을 맞이하고 있어요<br />
-        당신이 무엇을 하든 일이 잘 되게 해줄거예요
+      웃음으로 시작해 웃음으로 끝내면 그 하루는 <br />
+      어느 때보다 행복할 거예요.
       </div>
       <div className="selectbox"><div className="txtbox">물 마시기</div><button onClick={handleAddClick} className="selectbox_btn">추가</button></div>
       <div className="selectbox"><div className="txtbox">명상</div><button onClick={handleAddClick} className="selectbox_btn">추가</button></div>

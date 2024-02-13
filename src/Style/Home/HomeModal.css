@@ -1,0 +1,176 @@
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* 화면 하단에 모달을 위치 */
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: absolute;
+    bottom: 0;
+    /* 화면 하단에 위치 */
+    width: 100%;
+    height: 75%;
+    /* 높이를 75%로 설정 */
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap;  */
+    text-align: center;
+    align-items: center;
+    border-radius: 20px 20px 0 0;
+    animation: slideUp 0.4s ease-out;
+}
+
+.close-modal-button {
+    height: 5%;
+    margin-left: 85vw;
+    margin-top: 15px;
+    font-size: 25px;
+    color: #BFBABA;
+}
+
+.Headertxt {
+    height: 10%;
+}
+
+.HimgWrap {
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    width: 100%;
+    height: 90%;
+}
+
+.imgwrap1 {
+    height: 30%;
+    display: flex;
+}
+
+.imgwrap2 {
+    height: 30%;
+    display: flex;
+}
+
+.imgwrap3 {
+    height: 30%;
+    display: flex;
+}
+
+.div1,
+.div2,
+.div3,
+.div4,
+.div5,
+.div6,
+.div7,
+.div8,
+.div9 {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 30%;
+    margin: 0 15px;
+}
+
+@media all and (min-width:768px) and (max-width:3000px) {
+    @keyframes slideUp {
+        from {
+            transform: translateY(100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        /* 화면 하단에 모달을 위치 */
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+    .modal-content {
+        position: absolute;
+        bottom: 0;
+        /* 화면 하단에 위치 */
+        width: 90%;
+        height: 80%;
+        /* 높이를 75%로 설정 */
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        /* flex-wrap: wrap;  */
+        text-align: center;
+        align-items: center;
+        border-radius: 20px 20px 0 0;
+        animation: slideUp 0.4s ease-out;
+    }
+    .close-modal-button {
+        height: 5%;
+        margin-left: 85vw;
+        margin-top: 15px;
+        font-size: 25px;
+        color: #BFBABA;
+    }
+    .Headertxt {
+        height: 10%;
+    }
+    .HimgWrap {
+        display: flex;
+        flex-direction: column;
+        margin-top: 60px;
+        width: 100%;
+        height: 90%;
+    }
+    .imgwrap1 {
+        height: 30%;
+        display: flex;
+    }
+    .imgwrap2 {
+        height: 30%;
+        display: flex;
+    }
+    .imgwrap3 {
+        height: 30%;
+        display: flex;
+    }
+    .div1,
+    .div2,
+    .div3,
+    .div4,
+    .div5,
+    .div6,
+    .div7,
+    .div8,
+    .div9 {
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 30%;
+        margin: 0 15px;
+    }
+}

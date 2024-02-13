@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "../../Styles/Routine/Routine.css";
+import axios from "axios";
+import "../../Style/Routine/Routine.css";
 import ButtonGroup from '../Components/ButtonGroup';
 import { MiracleMorning } from "../Components/MiracleMorning";
 import { DayStart } from "../Components/DayStart";
@@ -21,8 +22,8 @@ import { GoToRoutine } from '../Components/GoToRoutine';
 import NavBar from "../Nav/Nav.jsx";
 
 
-
 const Routine = () => {
+  const [nickname, setNickname] = useState("");
   const [activeBtn, setActiveBtn] = useState('morning');
   const [user, setUser] = useState('');
   const [showMiracleMorning, setShowMiracleMorning] = useState(false);
@@ -41,7 +42,35 @@ const Routine = () => {
   const [showDepression1, setShowDepression1] = useState(false);
   const [showFrustration, setShowFrustration] = useState(false);
   const [showRest, setShowRest] = useState(false);
-  
+
+
+
+  useEffect(() => {
+    const fetchUserInfo = async (token) => {
+      try {
+        const response = await axios.get("https://dofarming.duckdns.org/api/v1/user", {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
+        const { nickname } = response.data;
+        return nickname;
+      } catch (error) {
+        console.error("사용자 정보를 가져오는 중 오류가 발생했습니다:", error);
+        return null;
+      }
+    };
+
+    const getNickname = async () => {
+      const token = localStorage.getItem("authToken");
+      const nickname = await fetchUserInfo(token);
+      if (nickname) {
+        setNickname(nickname);
+      }
+    };
+
+    getNickname();
+  }, []);
 
   const handleMiracleMorningClick = () => {
     setShowMiracleMorning(true);
@@ -155,17 +184,8 @@ const Routine = () => {
     setShowRest(true);
   };
 
-
-  // useEffect(() => {
-  //   fetch('/api/v1/user') 
-  //     .then(response => response.json())
-  //     .then(data => setUser(data.user))
-  //     .catch(error => console.log(error));
-  // }, []);
-
   const handleBtnClick = (btnType) => {
     setActiveBtn(btnType);
-    // 아침, 저녁, 건강, 기분 버튼 클릭 시 showMiracleMorning을 false로 설정
     setShowMiracleMorning(false);
     setShowDayStart(false);
     setShowCheerful(false);
@@ -184,60 +204,44 @@ const Routine = () => {
     setShowRest(false);
   };
 
-  return(
+
+  return (
     <div className="Routine_wrap">
-      {/* <div className="nav">
-        <div className="navBtn1"><AiOutlineUser size="24" color="black" /></div>
-        <div className="navBtn2"><AiOutlineMenu size="24" color="black" /></div>
-      </div> */}
-      <NavBar />
-      <div className="main">
-      {/* <hr /> */}
-        <div className="txt">
-          <p className="txt1">나를 가꾸는 시간</p>
-          <p className="txt2">우리 모두에게는 시간이라는 공평한 것이 주어진다</p>
-          <p className="txt3"># {user} 님을 위한 추천</p>
-        </div>
-        <ButtonGroup activeBtn={activeBtn} handleBtnClick={handleBtnClick} />
-
-      {!showMiracleMorning && !showDayStart && !showCheerful && !showJogging && !showDayEnd && !showBath && !showMeditation && !showReading && !showMyself && !showInsomnia && !showDepression && !showFamily && !showPms && !showDepression1 && !showFrustration && !showRest && <GoToRoutine activeBtn={activeBtn} handleMiracleMorningClick={handleMiracleMorningClick} handleDayStartClick={handleDayStartClick} handleCheerfulClick={handleCheerfulClick} handleJoggingClick={handleJoggingClick} handleDayEndClick={handleDayEndClick} handleBathClick={handleBathClick} handleMeditationClick={handleMeditationClick} handleReadingClick={handleReadingClick} handleMyselfClick={handleMyselfClick} handleInsomniaClick={handleInsomniaClick} handleDepressionClick={handleDepressionClick} handleFamilyClick={handleFamilyClick} handlePmsClick={handlePmsClick} handleDepression1Click={handleDepression1Click} handleFrustrationClick={handleFrustrationClick} handleRestClick={handleRestClick}/>
-        }
-
-        {/* 미라클 모닝 상태에 따른 화면 표시 */}
-        {showMiracleMorning && <MiracleMorning />}
-        {activeBtn === 'morning' && showDayStart && <DayStart />}
-        {activeBtn === 'morning' && showCheerful && <Cheerful />}
-        {activeBtn === 'morning' && showJogging && <Jogging />}
-        {showDayEnd && <DayEnd />}
-        {showBath && <Bath />}
-        {showMeditation && <Meditation />}
-        {showReading && <Reading />}
-        {showMyself && <Myself />}
-        {showInsomnia && <Insomnia />}
-        {showDepression && <Depression />}
-        {showFamily && <Family />}
-        {showPms && <Pms />}
-        {showDepression1 && <Depression1 />}
-        {showFrustration && <Frustration />}
-        {showRest && <Rest />}
+    <NavBar />
+    <div className="main">
+      <div className="txt">
+        <div className="txt1">나를 가꾸는 시간</div>
+        <div className="txt2">우리 모두에게는 <strong>시간</strong>이라는<br />공평한 것이 주어진다</div>
+        <div className="txt3"># {nickname} 님을 위한 추천</div>
       </div>
+      <ButtonGroup activeBtn={activeBtn} handleBtnClick={handleBtnClick} />
 
+    {!showMiracleMorning && !showDayStart && !showCheerful && !showJogging && !showDayEnd && !showBath && !showMeditation && !showReading && !showMyself && !showInsomnia && !showDepression && !showFamily && !showPms && !showDepression1 && !showFrustration && !showRest && <GoToRoutine activeBtn={activeBtn} handleMiracleMorningClick={handleMiracleMorningClick} handleDayStartClick={handleDayStartClick} handleCheerfulClick={handleCheerfulClick} handleJoggingClick={handleJoggingClick} handleDayEndClick={handleDayEndClick} handleBathClick={handleBathClick} handleMeditationClick={handleMeditationClick} handleReadingClick={handleReadingClick} handleMyselfClick={handleMyselfClick} handleInsomniaClick={handleInsomniaClick} handleDepressionClick={handleDepressionClick} handleFamilyClick={handleFamilyClick} handlePmsClick={handlePmsClick} handleDepression1Click={handleDepression1Click} handleFrustrationClick={handleFrustrationClick} handleRestClick={handleRestClick}/>
+      }
+
+      {/* 미라클 모닝 상태에 따른 화면 표시 */}
+      {showMiracleMorning && <MiracleMorning />}
+      {activeBtn === 'morning' && showDayStart && <DayStart />}
+      {activeBtn === 'morning' && showCheerful && <Cheerful />}
+      {activeBtn === 'morning' && showJogging && <Jogging />}
+      {showDayEnd && <DayEnd />}
+      {showBath && <Bath />}
+      {showMeditation && <Meditation />}
+      {showReading && <Reading />}
+      {showMyself && <Myself />}
+      {showInsomnia && <Insomnia />}
+      {showDepression && <Depression />}
+      {showFamily && <Family />}
+      {showPms && <Pms />}
+      {showDepression1 && <Depression1 />}
+      {showFrustration && <Frustration />}
+      {showRest && <Rest />}
     </div>
-    
-  );
+
+  </div>
+  
+);
 };
 
 export default Routine;
-
-
-
-
-// //추가 버튼 누르면 나오는 모달 셀렉트 박스->이미 있는 루틴에서 값 가져온 후 추가시키키
-// //전체 추가시 모든 값 루틴으로 추가시키키+추가 누른 값 루틴으로 추가시키키
-// //닉네임 가져오는 거 해결 해보기
-// //리액트 서버 연결, 서버에서 데이터 가져오기 공부 (url 넣는 파일을 따로 만들어야 하나?!)
-// //전체 디자인 수정+pc 화면 반응형 수정
-
-
-
 

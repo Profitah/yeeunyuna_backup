@@ -1,0 +1,102 @@
+body {
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+
+/* login 3 */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.Login3_txt1 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin: 0 auto;
+    padding-top: 10vh;
+    width: 90vw;
+    font-weight: 400;
+}
+
+strong {
+    font-weight: bolder;
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.option {
+    width: 40vw;
+    height: 12vh;
+    background-color: #f3f3f3;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 20px;
+    text-align: center;
+    margin: 1.5vh;
+    cursor: pointer;
+    flex-basis: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selected {
+    background-color: #ED8C37;
+    color: white;
+}
+
+#SelectclearBtn {
+    padding: 2.3vh;
+    font-size: 1.25rem;
+    background-color: #ED8C37;
+    color: #ffffff;
+    border: #ED8C37;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-bottom: 10vh;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 6vh;
+    width: 65vw;
+}
+
+#SelectclearBtn:disabled {
+    background-color: grey;
+    color: white;
+    width: 65vw;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .options {
+        width: 30vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        margin: 0 auto;
+    }
+    #SelectclearBtn {
+        width: 250px;
+        cursor: pointer;
+    }
+    #SelectclearBtn:disabled {
+        background-color: grey;
+        color: white;
+        width: 250px;
+        cursor: pointer;
+    }
+}

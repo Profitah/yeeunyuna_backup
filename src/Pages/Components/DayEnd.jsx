@@ -18,7 +18,7 @@ export const DayEnd = () => {
         하루의 마무리
       </div>
       <div className="m_txt2">
-        오늘 하루도 수고 많았어요<br />하루를 <strong>충만하게</strong> 마무리 해보는 건 어떨까요?
+        오늘 하루도 수고 많았어요.<br />하루를 충만하게 마무리 해보는 건 어떨까요?
       </div>
       <div className="selectbox"><div className="txtbox">일기쓰기</div><button onClick={handleAddClick} className="selectbox_btn">추가</button></div>
       <div className="selectbox"><div className="txtbox">내일 입을 옷 준비</div><button onClick={handleAddClick} className="selectbox_btn">추가</button></div>

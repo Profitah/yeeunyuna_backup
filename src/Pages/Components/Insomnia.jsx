@@ -18,8 +18,8 @@ export const Insomnia = () => {
         불면증 극복
       </div>
       <div className="m_txt2">
-        잠에 드는게 힘든가요? 잠에 잘 들 수 있도록 주변 환경을<br />
-        정리하고 차분한 환경을 만들어보는 건 어떨까요?
+      매일 밤, 편안하게 잠들어 새로운 하루를 맞이해보세요. <br />
+      몸과 마음을 편하게 가다듬어 보는 건 어떨까요?
       </div>
       <div className="selectbox"><div className="txtbox">아로마 오일+가습기</div><button onClick={handleAddClick} className="selectbox_btn">추가</button></div>
       <div className="selectbox"><div className="txtbox">조명 어둡게</div><button onClick={handleAddClick} className="selectbox_btn">추가</button></div>

@@ -4,19 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/FAVI/TtnmObHb.ico">
     <title>Finna</title>
 
     <script type="module">
-    const importMap = {
-      imports: {
-        "@react-google-maps/api": "/path/to/@react-google-maps/api.js"
-      }
-    };
-    if (window.imports) {
-      Object.assign(window.imports, importMap.imports);
-    } else {
-      window.imports = importMap.imports;
-    }
+        const importMap = { imports: { "@react-google-maps/api": "/path/to/@react-google-maps/api.js" } }; if (window.imports) { Object.assign(window.imports, importMap.imports); } else { window.imports = importMap.imports; }
     </script>
 </head>
 
