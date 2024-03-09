@@ -1,2 +1,2 @@
 # DoFarming-WEB
-가장 상위에 있는 login2를 백업하려고 함.
+src에 있는 login2는 무시할 것
